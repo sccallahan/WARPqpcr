@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 # WARPqpcr
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/sccallahan/WARPqpcr.svg?branch=master)](https://travis-ci.org/sccallahan/WARPqpcr)
 <!-- badges: end -->
 
 **W**eb **A**pp and **R** **P**ackage for qPCR (WARPqpcr) provides functionality for analyzing qPCR data using the dCT and ddCT methods and generating plots of results. This package also contains functions for finding the most stable housekeeping gene from a group of possible genes.
