@@ -13,10 +13,10 @@ The goal of this package is to allow rapid, reproducible analysis of qPCR data, 
 Installation
 ------------
 
-You can install the released version of WARPqpcr from [my github](https://github.com/sccallahan) with:
+You can install the released version of WARPqpcr from [this repo](https://github.com/sccallahan/WARPqpcr) with:
 
 ``` r
-# install devtools if needed
+# install devtools if needed -- must have for installing from github
 install.packages("devtools")
 
 # now install WARPqpcr
