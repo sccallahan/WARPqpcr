@@ -180,3 +180,9 @@ References
 
 -   [ReadqPCR and NormqPCR](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-296)
 -   [Selection of housekeeping genes for gene expression studies in human reticulocytes using real-time PCR](https://www.ncbi.nlm.nih.gov/pubmed/17026756)
+
+To do
+-----
+
+-   \[ \] Port to Shiny App
+-   \[ \] ChIP-qPCR analysis module
