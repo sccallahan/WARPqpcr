@@ -185,4 +185,6 @@ To do
 -----
 
 -   \[ \] Port to Shiny App
+-   \[ \] Add vignettes/links for web app to repo
 -   \[ \] ChIP-qPCR analysis module
+-   \[ \] Add examples to README
