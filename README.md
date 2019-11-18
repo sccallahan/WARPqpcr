@@ -4,8 +4,7 @@ WARPqpcr
 ========
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/sccallahan/WARPqpcr.svg?branch=master)](https://travis-ci.org/sccallahan/WARPqpcr) <!-- badges: end -->
-
+<!-- badges: end -->
 **W**eb **A**pp and **R** **P**ackage for qPCR (WARPqpcr) provides functionality for analyzing qPCR data using the dCT and ddCT methods and generating plots of results. This package also contains functions for finding the most stable housekeeping gene from a group of possible genes.
 
 The goal of this package is to allow rapid, reproducible analysis of qPCR data, particularly in the molecular biology setting, to provide easy functions for visualizing results, and to provide a tool for selecting the best housekeeping gene from a list of candidates. Many of the functions in this package rely on the ReadqPCR and NormqPCR packages for calculations, and the housekeeping gene stability is an implementation of an existing method (references for all of this are at the end of the README!)
