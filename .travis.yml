@@ -2,9 +2,6 @@
 
 language: R
 cache: packages
-addons:
-  apt:
-    packages:
-      - libx11-dev
-      - mesa-common-dev
-      - libglu1-mesa-dev
+before_install:
+  - sudo apt-get -y install libx11-dev mesa-common-dev libglu1-mesa-dev
+
