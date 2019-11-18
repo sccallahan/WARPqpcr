@@ -4,7 +4,8 @@ WARPqpcr
 ========
 
 <!-- badges: start -->
-<!-- badges: end -->
+[![Build Status](https://travis-ci.org/sccallahan/WARPqpcr.svg?branch=master)](https://travis-ci.org/sccallahan/WARPqpcr) <!-- badges: end -->
+
 **W**eb **A**pp and **R** **P**ackage for qPCR (WARPqpcr) provides functionality for analyzing qPCR data using the dCT and ddCT methods and generating plots of results. This package also contains functions for finding the most stable housekeeping gene from a group of possible genes.
 
 The goal of this package is to allow rapid, reproducible analysis of qPCR data, particularly in the molecular biology setting, to provide easy functions for visualizing results, and to provide a tool for selecting the best housekeeping gene from a list of candidates. Many of the functions in this package rely on the ReadqPCR and NormqPCR packages for calculations, and the housekeeping gene stability is an implementation of an existing method (references for all of this are at the end of the README!)
@@ -20,6 +21,12 @@ install.packages("devtools")
 
 # now install WARPqpcr
 install_github("sccallahan/WARPqpcr")
+```
+
+**NB:** Some linux systems may have difficulty installing some dependencies, particularly the `rgl` package (a dependency quite a way down the chain). This can be fixed by running the following lines in terminal:
+
+``` bash
+apt-get install  libx11-dev mesa-common-dev libglu1-mesa-dev
 ```
 
 Some notes about samplesheet format and methods
@@ -68,7 +75,7 @@ avgCT <- calcCV(avgCtObj = avgCT)
 plotAvgCT(avgCtObj = avgCT, theme_classic = TRUE, title = "Avg CT")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ``` r
 
@@ -79,7 +86,7 @@ dct <- get_dCT_singleRep(sampleObj = sampleObj, hkg = hkg)
 plot_dCT_singleRep(dct, theme_classic = TRUE, title = "dCT values")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-2.png" width="100%" />
 
 ``` r
 
@@ -91,7 +98,7 @@ ddct <- get_ddCT_singleRep(sampleObj = sampleObj, rel.exp = TRUE, hkg = hkg, con
 plot_ddCT_singleRep(ddct, theme_classic = TRUE, rel.exp = TRUE, title = "Relative Expression (ddCT)")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-3.png" width="100%" />
 
 Example for biological replicate data
 -------------------------------------
@@ -114,7 +121,7 @@ avgct <- calcCV(avgct)
 plotAvgCT(avgct, title = "Avg CT values")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ``` r
 
@@ -138,7 +145,7 @@ plot_ddCT_bioReps(ddCTobj = relExp, theme_classic = TRUE,
                   rel.exp = TRUE, title = "Relative Expression (ddCT)") #NB: rel.exp value must match data type
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-2.png" width="100%" />
 
 ``` r
 
@@ -149,7 +156,7 @@ plot_ddCT_bioReps(ddCTobj = absExp, theme_classic = TRUE,
                   rel.exp = FALSE, title = "log2 fold-change (ddCT)") #NB: rel.exp value must match data type
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-3.png" width="100%" />
 
 Example for selecting most stable housekeeping gene
 ---------------------------------------------------
