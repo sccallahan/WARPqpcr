@@ -7,7 +7,7 @@
 readSampleSheet(file)
 }
 \arguments{
-\item{file}{}
+\item{file}{Tab-delimted file containing qPCR data}
 }
 \value{
 A qPCRBatch object.

@@ -3,7 +3,7 @@
 #' @description Reads in a tab-delimited file of qPCR data using \code{\link{read.qPCR}}.
 #' Requires 5 columns: Well, Plate, Sample, Detector, Cq.
 #'
-#' @param file
+#' @param file Tab-delimted file containing qPCR data
 #'
 #' @details Biological replicates MUST be given unique identifiers, else they will be treated as technical replicates. For example,
 #' if an experiment has 2 biological replicates for a wildtype sample, they should be entered as "WT_1" and "WT_2". Entering them

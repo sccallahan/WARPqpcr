@@ -3,7 +3,7 @@
 #' @description Functions as \code{\link{readSampleSheet}} when the Cq column contains non-numerics or non-NA values.
 #' Will convert all non-numerics to NA. Saves a converted version of the file with an "_NAconverted.csv" suffix.
 #'
-#' @param file
+#' @param file Tab-delimted file containing qPCR data
 #'
 #' @details \code{\link{readSampleSheet}} will fail if any non-numeric values are in the Cq columns, or if every sample
 #' does not have the same number of replicates for each gene. This function will convert all non-numerics to NA,

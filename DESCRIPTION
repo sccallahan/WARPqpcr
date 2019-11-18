@@ -16,7 +16,8 @@ Imports:
     tools,
     RColorBrewer,
     ggplot2,
-    stringr
+    stringr,
+    reshape2
 Depends:
     R (>= 3.4.4),
     NormqPCR,

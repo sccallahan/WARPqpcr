@@ -8,7 +8,7 @@ signifTest(dCTObj, gene.name, var.equal = FALSE)
 }
 \arguments{
 \item{dCTObj}{A data.frame generated from the \code{\link{get_dCT_singleRep}}
-or \code{\link{get_dCT_bioRep}} function.}
+or \code{\link{get_dCT_bioReps}} function.}
 
 \item{gene.name}{Name of the gene for which to compute the t-test.}
 
