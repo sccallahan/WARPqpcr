@@ -33,7 +33,7 @@
 
 signifTest <- function(dCTObj, gene.name, var.equal = TRUE){
   pvals <- c()
-  n <- str_split(colnames(dct), pattern = "[:punct:]", simplify = TRUE)
+  n <- str_split(colnames(dCTObj), pattern = "[:punct:]", simplify = TRUE)
   n <- unique(n[,1])
   # genes <- str_split(input$gene.name, pattern = "[:punct:] ", simplify = TRUE)
   for (i in unique(gene.name)){
