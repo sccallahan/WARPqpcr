@@ -22,6 +22,12 @@ knitr::opts_chunk$set(
 
 The goal of this package is to allow rapid, reproducible analysis of qPCR data, particularly in the molecular biology setting, to provide easy functions for visualizing results, and to provide a tool for selecting the best housekeeping gene from a list of candidates. Many of the functions in this package rely on the ReadqPCR and NormqPCR packages for calculations, and the housekeeping gene stability is an implementation of an existing method (references for all of this are at the end of the README!) 
 
+## Accessing the Web App
+
+In addition to being available as an R package, WARPqpcr is available as a web application. This web app requires no knowledge of R or programming in general to use. Users only need to upload their samplesheet (format described below), choose an analysis type, then fill out a few texts fields. The analysis is automatically run, and results (.txt files with CT values, ddCT values, etc. and .png files of relative expression) are available for download as a zip file.
+
+[CLICK HERE](https://s-carson-callahan.shinyapps.io/WARPqpcr/) to go to the shinyapps.io page containing the web app.
+
 ## Installation
 
 You can install the released version of WARPqpcr from [this repo](https://github.com/sccallahan/WARPqpcr) with:
@@ -54,6 +60,17 @@ The format for the samplesheet is described in the [ReadqPCR documentation.](htt
 * Cq. The Ct/Cq value for the well. These values *must* be either numerics or NAs.
 
 The `readSampleSheet` function assumes that the data is formatted as above and each sample is measuring the same genes with the same number of replicates per gene per sample (i.e. all genes measured must be in all samples, and each gene must have equal numbers of replicates). If you end up needing to discard replicates for certain genes/samples because they fail QC or the qPCR reaction failed, please leave the wells as just NAs instead of deleting the data. If your machine outputs non-NA values for wells where nothing was measured, please use the `readSampleSheet_NoCT` function to convert the data to NAs.
+
+An example of the format required:
+
+```{r, echo=FALSE}
+suppressPackageStartupMessages(library(WARPqpcr))
+
+# read in the qPCR data
+sampleObj <-read.csv(system.file("extdata", "samplesheet_singleRep.csv", package = "WARPqpcr"), header = TRUE, sep = "\t")
+
+sampleObj[1:10, ]
+```
 
 #### Methods
 
@@ -120,7 +137,8 @@ dct <- get_dCT_bioReps(sampleObj = sampleObj, hkg = hkg)
 
 # since we have biological replicates, we can calculate significance
 # stats should be performed on these dCT values
-signifTest <- signifTest(dCTObj = dct, gene.name = "GeneA", var.equal = FALSE)
+signifTest <- signifTest(dCTObj = dct, gene.name = "GeneA", var.equal = TRUE)
+head(signifTest)
 
 # now we can calculate the ddCT to get expression changes and make plots
 # we will do both relative expression and log2 fold-change for the sake of demonstration

@@ -10,6 +10,13 @@ WARPqpcr
 
 The goal of this package is to allow rapid, reproducible analysis of qPCR data, particularly in the molecular biology setting, to provide easy functions for visualizing results, and to provide a tool for selecting the best housekeeping gene from a list of candidates. Many of the functions in this package rely on the ReadqPCR and NormqPCR packages for calculations, and the housekeeping gene stability is an implementation of an existing method (references for all of this are at the end of the README!)
 
+Accessing the Web App
+---------------------
+
+In addition to being available as an R package, WARPqpcr is available as a web application. This web app requires no knowledge of R or programming in general to use. Users only need to upload their samplesheet (format described below), choose an analysis type, then fill out a few texts fields. The analysis is automatically run, and results (.txt files with CT values, ddCT values, etc. and .png files of relative expression) are available for download as a zip file.
+
+[CLICK HERE](https://s-carson-callahan.shinyapps.io/WARPqpcr/) to go to the shinyapps.io page containing the web app.
+
 Installation
 ------------
 
@@ -44,6 +51,20 @@ The format for the samplesheet is described in the [ReadqPCR documentation.](htt
 
 The `readSampleSheet` function assumes that the data is formatted as above and each sample is measuring the same genes with the same number of replicates per gene per sample (i.e. all genes measured must be in all samples, and each gene must have equal numbers of replicates). If you end up needing to discard replicates for certain genes/samples because they fail QC or the qPCR reaction failed, please leave the wells as just NAs instead of deleting the data. If your machine outputs non-NA values for wells where nothing was measured, please use the `readSampleSheet_NoCT` function to convert the data to NAs.
 
+An example of the format required:
+
+    #>    Well Plate Sample Detector    Cq
+    #> 1    A1     1     NT    GeneA 24.70
+    #> 2    A2     1    sh1    GeneA 24.98
+    #> 3    A3     1    sh3    GeneA 24.84
+    #> 4    A4     1    sh5    GeneA 24.45
+    #> 5    A5     1    sh6    GeneA 24.34
+    #> 6    A6     1     NT      HKG 16.79
+    #> 7    A7     1    sh1      HKG 16.78
+    #> 8    A8     1    sh3      HKG 17.14
+    #> 9    A9     1    sh5      HKG 17.32
+    #> 10  A10     1    sh6      HKG 16.97
+
 #### Methods
 
 The methods for biological replicates can be found in the [NormqPCR documentation](https://www.bioconductor.org/packages/release/bioc/vignettes/NormqPCR/inst/doc/NormqPCR.pdf). In short:
@@ -75,7 +96,7 @@ avgCT <- calcCV(avgCtObj = avgCT)
 plotAvgCT(avgCtObj = avgCT, theme_classic = TRUE, title = "Avg CT")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ``` r
 
@@ -86,7 +107,7 @@ dct <- get_dCT_singleRep(sampleObj = sampleObj, hkg = hkg)
 plot_dCT_singleRep(dct, theme_classic = TRUE, title = "dCT values")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-2.png" width="100%" />
 
 ``` r
 
@@ -98,7 +119,7 @@ ddct <- get_ddCT_singleRep(sampleObj = sampleObj, rel.exp = TRUE, hkg = hkg, con
 plot_ddCT_singleRep(ddct, theme_classic = TRUE, rel.exp = TRUE, title = "Relative Expression (ddCT)")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-3.png" width="100%" />
 
 Example for biological replicate data
 -------------------------------------
@@ -121,7 +142,7 @@ avgct <- calcCV(avgct)
 plotAvgCT(avgct, title = "Avg CT values")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ``` r
 
@@ -131,9 +152,10 @@ dct <- get_dCT_bioReps(sampleObj = sampleObj, hkg = hkg)
 
 # since we have biological replicates, we can calculate significance
 # stats should be performed on these dCT values
-signifTest <- signifTest(dCTObj = dct, gene.name = "GeneA", var.equal = FALSE)
-#> The p.value for GeneA is 0.0338599629076486
-#> p.value is SIGNIFICANT with p < 0.05!
+signifTest <- signifTest(dCTObj = dct, gene.name = "GeneA", var.equal = TRUE)
+head(signifTest)
+#>            pvals
+#> GeneA 0.02594038
 
 # now we can calculate the ddCT to get expression changes and make plots
 # we will do both relative expression and log2 fold-change for the sake of demonstration
@@ -145,7 +167,7 @@ plot_ddCT_bioReps(ddCTobj = relExp, theme_classic = TRUE,
                   rel.exp = TRUE, title = "Relative Expression (ddCT)") #NB: rel.exp value must match data type
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-2.png" width="100%" />
 
 ``` r
 
@@ -156,7 +178,7 @@ plot_ddCT_bioReps(ddCTobj = absExp, theme_classic = TRUE,
                   rel.exp = FALSE, title = "log2 fold-change (ddCT)") #NB: rel.exp value must match data type
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-3.png" width="100%" />
 
 Example for selecting most stable housekeeping gene
 ---------------------------------------------------
