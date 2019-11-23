@@ -24,3 +24,7 @@ Depends:
     R (>= 3.4.4),
     NormqPCR,
     ReadqPCR
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
