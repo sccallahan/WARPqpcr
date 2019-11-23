@@ -17,16 +17,36 @@
 #'
 #' @examples
 #'
-signifTest <- function(dCTObj, gene.name, var.equal = FALSE){
+# signifTest <- function(dCTObj, gene.name, var.equal = FALSE){
+#   n <- str_split(colnames(dct), pattern = "[:punct:]", simplify = TRUE)
+#   n <- unique(n[,1])
+#   x <- t.test(dCTObj[rownames(dCTObj) == gene.name, grepl(n[1], colnames(dCTObj))],
+#               dCTObj[rownames(dCTObj) == gene.name, grepl(n[2], colnames(dCTObj))],
+#               var.equal = var.equal)
+#   message(paste0("The p.value for ", gene.name, " is ", x$p.value))
+#   if (x$p.value < 0.05){
+#     message("p.value is SIGNIFICANT with p < 0.05!")
+#   } else {
+#     message("p.value is NOT significant with p > 0.05!")
+#   }
+# }
+
+signifTest <- function(dCTObj, gene.name, var.equal = TRUE){
+  pvals <- c()
   n <- str_split(colnames(dct), pattern = "[:punct:]", simplify = TRUE)
   n <- unique(n[,1])
-  x <- t.test(dCTObj[rownames(dCTObj) == gene.name, grepl(n[1], colnames(dCTObj))],
-              dCTObj[rownames(dCTObj) == gene.name, grepl(n[2], colnames(dCTObj))],
-              var.equal = var.equal)
-  message(paste0("The p.value for ", gene.name, " is ", x$p.value))
-  if (x$p.value < 0.05){
-    message("p.value is SIGNIFICANT with p < 0.05!")
-  } else {
-    message("p.value is NOT significant with p > 0.05!")
+  # genes <- str_split(input$gene.name, pattern = "[:punct:] ", simplify = TRUE)
+  for (i in unique(gene.name)){
+    x <- t.test(dCTObj[rownames(dCTObj) == i, grepl(n[1], colnames(dCTObj))],
+                dCTObj[rownames(dCTObj) == i, grepl(n[2], colnames(dCTObj))],
+                var.equal = var.equal)
+    tempPval <- x$p.value
+    pvals <- as.data.frame(rbind(pvals, tempPval))
   }
+  # return(pvals)
+  rownames(pvals) <- NULL
+  sampNames <- as.data.frame(gene.name)
+  rownames(pvals) <- sampNames$gene.name
+  colnames(pvals) <- "pvals"
+  return(pvals)
 }
