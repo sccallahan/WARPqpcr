@@ -26,5 +26,7 @@ Depends:
     ReadqPCR
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    png,
+    jpeg
 VignetteBuilder: knitr

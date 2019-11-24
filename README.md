@@ -17,6 +17,8 @@ In addition to being available as an R package, WARPqpcr is available as a web a
 
 [CLICK HERE](https://s-carson-callahan.shinyapps.io/WARPqpcr/) to go to the shinyapps.io page containing the web app.
 
+[CLICK HERE](https://github.com/sccallahan/WARPqpcr/blob/master/vignettes/shiny_app_usage_github.md) for information on how to use the web application.
+
 Installation
 ------------
 
