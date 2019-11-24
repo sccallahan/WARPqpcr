@@ -4,7 +4,6 @@ author: S. Carson Callahan
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 resource_files:
-  - Overall_web_page.png
 vignette: >
   %\VignetteIndexEntry{Using the WARPqpcr Web Application}
   %\VignetteEngine{knitr::rmarkdown}
