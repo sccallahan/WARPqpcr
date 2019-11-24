@@ -71,7 +71,7 @@ All analyses will start with this step. Simply click the "Browse" button and nav
 
 **Step 2: Choose "single replicate"**
 
-<img src='blank_singlerep.png' width=height= />
+<img src='blank_singlerep.png' width= 500 height=500 />
 
 **Step 3: Enter Text Fields and Run Analysis!**
 
