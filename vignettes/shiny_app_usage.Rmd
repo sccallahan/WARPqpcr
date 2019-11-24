@@ -1,5 +1,5 @@
 ---
-title: "Using the WARPqpcr Web Application"
+title: "using the WARPqpcr Web Application"
 author: S. Carson Callahan
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
