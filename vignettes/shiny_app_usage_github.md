@@ -171,7 +171,7 @@ Samplesheet snippet:
 
 **Step 3: Enter Text Field and Run Analysis!**
 
-<img src='hkg_filled_fields.png' width=300 height=225 />
+<img src='hkg_filled_fields.png' width=300 height=300 />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. Enter the genes that are meant to be compared for stability. As in the biological replicates, the genes *must* be entered as text separated by a comma and space.
 
