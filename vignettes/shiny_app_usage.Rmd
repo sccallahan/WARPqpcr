@@ -1,11 +1,11 @@
 ---
-title: "using the WARPqpcr Web Application"
+title: "using the WARPqpcr web app"
 author: S. Carson Callahan
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 resource_files:
 vignette: >
-  %\VignetteIndexEntry{Using the WARPqpcr Web Application}
+  %\VignetteIndexEntry{using the WARPqpcr web app}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
