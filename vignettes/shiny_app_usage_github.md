@@ -65,7 +65,7 @@ Samplesheet snippet:
 
 **Step 1: Upload the file!**
 
-<img src='file_upload_image.png' width= 450 height=300 />
+<img src='file_upload_image.png' width= 150 height=100 />
 
 All analyses will start with this step. Simply click the "Browse" button and navigate to your samplesheet.
 
@@ -83,7 +83,7 @@ Here, the user enters the requested information, then clicks the "Run Analysis!"
 
 Upon completion of analysis, a download button will appear. Click this button to download a .zip file of results called "outputs.zip."
 
-<img src='download_button.png' width=250 height=150 />
+<img src='download_button.png' width=100 height=80 />
 
 #### Biolgical Replicate Analysis
 
@@ -113,7 +113,7 @@ Samplesheet snippet:
 
 **Step 1: Upload the file!**
 
-<img src='file_upload_image.png' width= 450 height=300 />
+<img src='file_upload_image.png' width= 150 height=100 />
 
 **Step 2: Choose "biological replicates"**
 
@@ -131,7 +131,7 @@ Here, the user enters the requested information, then clicks the "Run Analysis!"
 
 Upon completion of analysis, a download button will appear. Click this button to download a .zip file of results called "outputs.zip."
 
-<img src='download_button.png' width=250 height=150 />
+<img src='download_button.png' width=100 height=80 />
 
 #### Housekeeping Gene Stability
 
@@ -163,7 +163,7 @@ Samplesheet snippet:
 
 **Step 1: Upload the file!**
 
-<img src='file_upload_image.png' width= 450 height=300 />
+<img src='file_upload_image.png' width= 150 height=100 />
 
 **Step 2: Choose "housekeeping gene stability"**
 
@@ -179,4 +179,4 @@ Here, the user enters the requested information, then clicks the "Run Analysis!"
 
 Upon completion of analysis, a download button will appear. Click this button to download a .zip file of results called "outputs.zip." For housekeeping gene stability, the contents will be a .txt file containing genes ranked from "most stable" (lowest score) to "least stable" (highest score).
 
-<img src='download_button.png' width=250 height=150 />
+<img src='download_button.png' width=100 height=80 />
