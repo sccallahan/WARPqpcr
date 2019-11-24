@@ -65,7 +65,7 @@ Samplesheet snippet:
 
 **Step 1: Upload the file!**
 
-<img src='file_upload_image.png' width= 150 height=100 />
+<img src='file_upload_image.png' width= 250 height=100 />
 
 All analyses will start with this step. Simply click the "Browse" button and navigate to your samplesheet.
 
@@ -75,7 +75,7 @@ All analyses will start with this step. Simply click the "Browse" button and nav
 
 **Step 3: Enter Text Fields and Run Analysis!**
 
-<img src='single_rep_fields.png' width= 450 height=300 />
+<img src='single_rep_fields.png' width= 400 height=300 />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. The "Housekeeping gene" field is where the user inputs the gene to be used as the housekeeping for calculations. Here I have used a generic "HKG" as an example. The "Control sample" is the name of the control in your experiment. In this case, my control was called "NT" in the sameplesheet, so I will enter that here as well. *Do not* place punctuation around the names, simply enter them as text as shown.
 
@@ -113,7 +113,7 @@ Samplesheet snippet:
 
 **Step 1: Upload the file!**
 
-<img src='file_upload_image.png' width= 150 height=100 />
+<img src='file_upload_image.png' width= 250 height=100 />
 
 **Step 2: Choose "biological replicates"**
 
@@ -123,7 +123,7 @@ The number of replicates defaults to 3, but this can be changed to match whateve
 
 **Step 3: Enter Text Fields and Run Analysis!**
 
-<img src='bioreps_filled_fields.png' width= 450 height=300 />
+<img src='bioreps_filled_fields.png' width= 400 height=300 />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. The "Housekeeping gene" field is where the user inputs the gene to be used as the housekeeping for calculations. As before, I have used a generic "HKG" as an example. Condition 1 and Condition 2 are where you enter the information for the two groups of your samples. Looking at the samplesheet snippet, my two groups are "KD" and "LUC" (a luciferase control). If needed, change the number of replicates to match the number of biological replicates you have - I happen to have 3. The last field is where you enter the genes for which statistical tests need to be computed - this is a two-sample T.test using the `t.test` function in R. The genes *must* be entered as shown - i.e. text separated by a comma then a space. Gene names are whatever was entered for the "Detector" field in the samplesheet.
 
@@ -163,7 +163,7 @@ Samplesheet snippet:
 
 **Step 1: Upload the file!**
 
-<img src='file_upload_image.png' width= 150 height=100 />
+<img src='file_upload_image.png' width= 250 height=100 />
 
 **Step 2: Choose "housekeeping gene stability"**
 
@@ -171,7 +171,7 @@ Samplesheet snippet:
 
 **Step 3: Enter Text Field and Run Analysis!**
 
-<img src='hkg_filled_fields.png' width= 450 height=300 />
+<img src='hkg_filled_fields.png' width= 400 height=300 />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. Enter the genes that are meant to be compared for stability. As in the biological replicates, the genes *must* be entered as text separated by a comma and space.
 
