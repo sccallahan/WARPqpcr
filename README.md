@@ -27,6 +27,7 @@ You can install the released version of WARPqpcr from [this repo](https://github
 ``` r
 # install devtools if needed -- must have for installing from github
 install.packages("devtools")
+library(devtools)
 
 # now install WARPqpcr
 install_github("sccallahan/WARPqpcr")
@@ -163,8 +164,8 @@ head(signifTest)
 # we will do both relative expression and log2 fold-change for the sake of demonstration
 
 # RELATIVE EXPRESSION
-relExp <- get_ddCT_bioReps(sampleObj = sampleObj, cond.1 = "KD", cond.2 = "LUC", reps.cond.1 = 3, reps.cond.2 = 3,
-                 hkg = hkg, rel.exp = TRUE)
+relExp <- get_ddCT_bioReps(sampleObj = sampleObj, case = "KD", control = "LUC", reps.case = 3, reps.control = 3,
+                           hkg = hkg, rel.exp = TRUE)
 plot_ddCT_bioReps(ddCTobj = relExp, theme_classic = TRUE,
                   rel.exp = TRUE, title = "Relative Expression (ddCT)") #NB: rel.exp value must match data type
 ```
@@ -174,8 +175,8 @@ plot_ddCT_bioReps(ddCTobj = relExp, theme_classic = TRUE,
 ``` r
 
 # LOG2 FOLD-CHANGE
-absExp <- get_ddCT_bioReps(sampleObj = sampleObj, cond.1 = "KD", cond.2 = "LUC", reps.cond.1 = 3, reps.cond.2 = 3,
-                 hkg = hkg, rel.exp = FALSE)
+absExp <- get_ddCT_bioReps(sampleObj = sampleObj, case = "KD", control = "LUC", reps.case = 3, reps.control = 3,
+                           hkg = hkg, rel.exp = FALSE)
 plot_ddCT_bioReps(ddCTobj = absExp, theme_classic = TRUE,
                   rel.exp = FALSE, title = "log2 fold-change (ddCT)") #NB: rel.exp value must match data type
 ```
@@ -214,7 +215,7 @@ References
 To do
 -----
 
--   \[ \] Port to Shiny App
--   \[ \] Add vignettes/links for web app to repo
+-   \[X\] Port to Shiny App
+-   \[X\] Add vignettes/links for web app to repo
 -   \[ \] ChIP-qPCR analysis module
 -   \[ \] Add examples to README
