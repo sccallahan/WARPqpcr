@@ -4,19 +4,19 @@
 \alias{get_ddCT_bioReps}
 \title{get_ddCT_bioReps}
 \usage{
-get_ddCT_bioReps(sampleObj, cond.1, cond.2, reps.cond.1, reps.cond.2, hkg,
+get_ddCT_bioReps(sampleObj, case, control, reps.case, reps.control, hkg,
   rel.exp = FALSE)
 }
 \arguments{
 \item{sampleObj}{A qPCRBatch object generated from the \code{\link{readSampleSheet}} function.}
 
-\item{cond.1}{A character vector containing the group for condition 1 (e.g. "untreated").}
+\item{case}{A character vector containing the group for the experimental condition (e.g. "treated").}
 
-\item{cond.2}{A character vector containing the group for condition 1 (e.g. "treated").}
+\item{control}{A character vector containing the group for control condition 1 (e.g. "untreated").}
 
-\item{reps.cond.1}{The number of biological replicates in condition 1.}
+\item{reps.case}{The number of biological replicates in condition 1.}
 
-\item{reps.cond.2}{The number of biological replicates in condition 2.}
+\item{reps.control}{The number of biological replicates in condition 2.}
 
 \item{hkg}{A character vector containing the housekeeping gene to use for ddCT calculations.}
 
@@ -33,8 +33,8 @@ Calculates the ddCT values for all samples when biological replicates are presen
 \examples{
 \dontrun{
 sampleObj <- readSampleSheet(file)
-ddCTObj <- get_ddCT_bioReps(sampleObj, cond.1 = "untreated",
-cond.2 = "treated", reps.cond.1 = 3, reps.cond.2 = 3,
+ddCTObj <- get_ddCT_bioReps(sampleObj, case = "treated",
+control = "untreated", reps.case = 3, reps.control = 3,
 hkg = "GAPDH", rel.exp = FALSE)
 }
 

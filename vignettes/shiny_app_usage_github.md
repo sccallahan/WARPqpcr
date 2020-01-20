@@ -1,7 +1,7 @@
 Using the WARPqpcr Web Application
 ================
 S. Carson Callahan
-2019-11-24
+2020-01-20
 
 About the Application
 ---------------------
@@ -19,6 +19,8 @@ The WARPqpcr Web Application runs the same analysis as the [WARPqpcr R package](
 -   Download data
 
 Upload completion of the analysis, a download button will appear, allowing users to download a .zip file containing all of the analysis outputs.
+
+NB: Disconnection from the server after clicking "Run Analysis" is indicative of one or more fields being incorrectly completed - a typo in a condition/gene name is the most common reason.
 
 Tutorials
 ---------
@@ -125,7 +127,7 @@ The number of replicates defaults to 3, but this can be changed to match whateve
 
 <img src="bioreps_filled_fields.png" width="80%" height="100%" />
 
-Here, the user enters the requested information, then clicks the "Run Analysis!" button. The "Housekeeping gene" field is where the user inputs the gene to be used as the housekeeping for calculations. As before, I have used a generic "HKG" as an example. Condition 1 and Condition 2 are where you enter the information for the two groups of your samples. Looking at the samplesheet snippet, my two groups are "KD" and "LUC" (a luciferase control). If needed, change the number of replicates to match the number of biological replicates you have - I happen to have 3. The last field is where you enter the genes for which statistical tests need to be computed - this is a two-sample T.test using the `t.test` function in R. The genes *must* be entered as shown - i.e. text separated by a comma then a space. Gene names are whatever was entered for the "Detector" field in the samplesheet.
+Here, the user enters the requested information, then clicks the "Run Analysis!" button. The "Housekeeping gene" field is where the user inputs the gene to be used as the housekeeping for calculations. As before, I have used a generic "HKG" as an example. Case and Control are where you enter the information for the two groups of your samples. Looking at the samplesheet snippet, my two groups are "KD" and "LUC" (a luciferase control). If needed, change the number of replicates to match the number of biological replicates you have - I happen to have 3. The last field is where you enter the genes for which statistical tests need to be computed - this is a two-sample T.test using the `t.test` function in R. The genes *must* be entered as shown - i.e. text separated by a comma then a space. Gene names are whatever was entered for the "Detector" field in the samplesheet.
 
 **Step 4: Download data.**
 
