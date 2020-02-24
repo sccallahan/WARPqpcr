@@ -3,10 +3,7 @@
 WARPqpcr
 ========
 
-<img src="man/figures/WARPqpcr.png" alt="how pretty!" width="20%" />
-<p class="caption">
-how pretty!
-</p>
+<img src="man/figures/WARPqpcr.png" width="20%" />
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/sccallahan/WARPqpcr.svg?branch=master)](https://travis-ci.org/sccallahan/WARPqpcr) <!-- badges: end -->

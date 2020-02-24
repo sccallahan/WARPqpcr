@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 ```
 # WARPqpcr
 
-```{r echo=FALSE, fig.cap="how pretty!", out.width='20%'}
+```{r echo=FALSE, out.width='20%'}
 knitr::include_graphics("man/figures/WARPqpcr.png")
 ```
 
