@@ -1,6 +1,6 @@
 Package: WARPqpcr
 Type: Package
-Title: Analyzes RT-qPCR and ChIP-qPCR Data and Makes Plots for Visualization
+Title: Web App and R Package for qPCR
 Version: 0.2.0
 Author: S. Carson Callahan <scot.c.callahan@uth.tmc.edu>
 Maintainer: S. Carson Callahan <scot.c.callahan@uth.tmc.edu>
