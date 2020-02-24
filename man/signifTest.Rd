@@ -4,7 +4,7 @@
 \alias{signifTest}
 \title{signifTest}
 \usage{
-signifTest(dCTObj, gene.name, var.equal = TRUE)
+signifTest(dCTObj, gene.name, var.equal = FALSE)
 }
 \arguments{
 \item{dCTObj}{A data.frame generated from the \code{\link{get_dCT_singleRep}}

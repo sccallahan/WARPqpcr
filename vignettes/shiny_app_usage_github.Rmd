@@ -66,7 +66,7 @@ Navigating to the Web Application will show this webpage:
 knitr::include_graphics("Overall_web_page.png")
 ```
 
-Users can this select which analysis they would like to perform!
+Users can then select which analysis they would like to perform!
 
 **NB:** For the single and biological replicate analysis, the coefficient of variation (CV) is calculated and meant to be used as a measure of technical replicate consistency. If the CV of any samples goes above 1%, a warning message will displayed prompting you to go to the raw and average CT values of the analysis and consider removing outliers:
 

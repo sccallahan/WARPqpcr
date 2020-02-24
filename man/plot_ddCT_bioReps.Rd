@@ -5,8 +5,8 @@
 \title{plot_ddCT_bioReps}
 \usage{
 plot_ddCT_bioReps(ddCTobj, palette = "Set1", xlab = "Gene",
-  ylab = "", title = "", legend.title = "", theme_classic = TRUE,
-  rel.exp = FALSE)
+  ylab = "", title = "", legend.title = "", hideHKG = FALSE,
+  HKGname, theme_classic = TRUE, rel.exp = FALSE)
 }
 \arguments{
 \item{ddCTobj}{A data.frame generated from the \code{\link{get_ddCT_bioReps}} function.}
@@ -20,6 +20,10 @@ plot_ddCT_bioReps(ddCTobj, palette = "Set1", xlab = "Gene",
 \item{title}{Main title for the plot.}
 
 \item{legend.title}{Title for the plot legend.}
+
+\item{hideHKG}{Boolean value indicating whether or not the housekeeping gene should be removed from the plot}
+
+\item{HKGname}{A character vector of the housekeeping gene name. Required if `hideHKG` is TRUE.}
 
 \item{theme_classic}{Boolean value. TRUE will yield a plot with the 'classic' background. FALSE will yield a plot
 with the default ggplot2 theme.}

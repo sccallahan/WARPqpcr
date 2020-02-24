@@ -8,6 +8,8 @@
 #' @param ylab y axis label.
 #' @param title Main title for the plot.
 #' @param legend.title Title for the plot legend.
+#' @param hideHKG Boolean value indicating whether or not the housekeeping gene should be removed from the plot
+#' @param HKGname A character vector of the housekeeping gene name. Required if `hideHKG` is TRUE.
 #' @param theme_classic Boolean value. TRUE will yield a plot with the 'classic' background. FALSE will yield a plot
 #' with the default ggplot2 theme.
 #' @param rel.exp Boolean value indicating whether or not relative expression values should be used for plot. TRUE will generate
@@ -20,7 +22,14 @@
 #' @examples
 #'
 plot_ddCT_singleRep <- function(ddCTobj, palette = "Set1", xlab = "", ylab = "", title = "",
-                                legend.title = "", theme_classic = TRUE, rel.exp = FALSE){
+                                legend.title = "", hideHKG = FALSE, HKGname,
+                                theme_classic = TRUE, rel.exp = FALSE){
+  if (hideHKG){
+    if(missing(HKGname)){
+      stop("Must provide HKGname to remove it from the plot!")
+    }
+    ddCTobj <- ddCTobj[!grepl(HKGname, ddCTobj$Var1), ]
+  }
   if (rel.exp){
     ggplot(data = ddCTobj, aes(x = ddCTobj[,1], y = ddCTobj$relExp, fill = ddCTobj[,2],
                                ymin = ddCTobj$relExpMin, ymax = ddCTobj$relExpMax)) +

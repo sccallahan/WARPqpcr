@@ -8,6 +8,8 @@
 #' @param ylab y axis label.
 #' @param title Main title for the plot.
 #' @param legend.title Title for the plot legend.
+#' @param hideHKG Boolean value indicating whether or not the housekeeping gene should be removed from the plot
+#' @param HKGname A character vector of the housekeeping gene name. Required if `hideHKG` is TRUE.
 #' @param theme_classic Boolean value. TRUE will yield a plot with the 'classic' background. FALSE will yield a plot
 #' with the default ggplot2 theme.
 #' @param rel.exp Boolean value indicating the data type contained in the ddCTobj.
@@ -27,8 +29,15 @@
 #' @examples
 #'
 plot_ddCT_bioReps <- function(ddCTobj, palette = "Set1", xlab = "Gene", ylab = "", title = "",
-                              legend.title = "", theme_classic = TRUE, rel.exp = FALSE){
+                              legend.title = "", hideHKG = FALSE, HKGname,
+                              theme_classic = TRUE, rel.exp = FALSE){
   if (rel.exp){
+    if (hideHKG){
+      if(missing(HKGname)){
+        stop("Must provide HKGname to remove it from the plot!")
+      }
+      ddCTobj <- ddCTobj[!grepl(HKGname, ddCTobj$ID), ]
+    }
     ggplot(data = ddCTobj, aes(x = ddCTobj[,1], y = as.numeric(as.character(ddCTobj$`2^-ddCt`)), fill = ddCTobj[,1],
                                ymin = as.numeric(as.character(ddCTobj$`2^-ddCt.min`)),
                                ymax = as.numeric(as.character(ddCTobj$`2^-ddCt.max`)))) +
@@ -49,6 +58,12 @@ plot_ddCT_bioReps <- function(ddCTobj, palette = "Set1", xlab = "Gene", ylab = "
         theme(plot.title = element_text(hjust=0.5, face = "bold", size = 20))
       }
   } else {
+    if (hideHKG){
+      if(missing(HKGname)){
+        stop("Must provide HKGname to remove it from the plot!")
+      }
+      ddCTobj <- ddCTobj[!grepl(HKGname, rownames(ddCTobj)), ]
+    }
     ggplot(data = ddCTobj, aes(x = rownames(ddCTobj), y = ddCTobj$ddCT, fill = rownames(ddCTobj),
                                ymin = ddCTobj$ddCT.min, ymax = ddCTobj$ddCT.max)) +
       geom_bar(stat = "identity", position = "dodge") +
@@ -59,8 +74,7 @@ plot_ddCT_bioReps <- function(ddCTobj, palette = "Set1", xlab = "Gene", ylab = "
       ylab(ylab) +
       ggtitle(title) +
       labs(fill = legend.title) +
-      scale_y_continuous(limits = c(min(ddCTobj$ddCT.min) - abs((0.25*min(ddCTobj$ddCT.min))),
-                                    max(ddCTobj$ddCT.max) + (0.25*max(ddCTobj$ddCT.max))), expand = c(0, 0)) +
+      scale_y_continuous(expand = c(0, 0)) +
       if (theme_classic){
         theme(plot.title = element_text(hjust=0.5, face = "bold", size = 20),
               panel.background = element_blank(), axis.line = element_line(color = "black", size = 2))

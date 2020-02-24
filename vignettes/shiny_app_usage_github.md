@@ -1,7 +1,7 @@
 Using the WARPqpcr Web Application
 ================
 S. Carson Callahan
-2020-01-20
+2020-02-09
 
 About the Application
 ---------------------
@@ -31,7 +31,7 @@ Navigating to the Web Application will show this webpage:
 
 <img src="Overall_web_page.png" width="75%" />
 
-Users can this select which analysis they would like to perform!
+Users can then select which analysis they would like to perform!
 
 **NB:** For the single and biological replicate analysis, the coefficient of variation (CV) is calculated and meant to be used as a measure of technical replicate consistency. If the CV of any samples goes above 1%, a warning message will displayed prompting you to go to the raw and average CT values of the analysis and consider removing outliers:
 
