@@ -385,6 +385,15 @@ Acknowledgments
 -   [Britany Ponvelle](http://www.britanyponvelle.com/) for designing the hex sticker!
 -   [Archit Ghosh](https://twitter.com/ArchitGhosh1) for providing data and advice for the ChIP-qPCR functionality!
 
+Citation
+--------
+
+If you like WARPqpcr, please cite it!:
+
+Callahan SC (2020). “WARPqpcr: Web App and R Package for qPCR.” doi: 10.5281/zenodo.3686338 (URL: <http://doi.org/10.5281/zenodo.3686338>).
+
+This information can also be found by running `citation(package = "WARPqpcr")` in the R console.
+
 To do
 -----
 
@@ -392,4 +401,4 @@ To do
 -   \[X\] Add vignettes/links for web app to repo
 -   \[X\] ChIP-qPCR analysis module
 -   \[X\] Add examples to README
--   \[ \] Add ChIP-qPCR to shiny app
+-   \[X\] Add ChIP-qPCR to shiny app
