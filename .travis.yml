@@ -5,5 +5,5 @@ cache: packages
 warnings_are_errors: false
 before_install:
   - sudo apt-get -y install libx11-dev mesa-common-dev libglu1-mesa-dev
-dist: bioinic
+dist: bionic
 
