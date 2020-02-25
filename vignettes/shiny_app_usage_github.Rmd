@@ -2,7 +2,7 @@
 title: "Using the WARPqpcr Web Application"
 author: S. Carson Callahan
 date: "`r Sys.Date()`"
-output: github_document
+output: html_document
 resource_files:
 vignette: >
   %\VignetteIndexEntry{Using the WARPqpcr Web Application}
