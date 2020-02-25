@@ -1,7 +1,7 @@
 Using the WARPqpcr Web Application
 ================
 S. Carson Callahan
-2020-02-09
+2020-02-25
 
 About the Application
 ---------------------
@@ -25,11 +25,11 @@ NB: Disconnection from the server after clicking "Run Analysis" is indicative of
 Tutorials
 ---------
 
-Below is a small tutorial for each of the 3 currently available analyses. I will also include a small snippet of the datasheet that is required for each analysis to make the format more clear.
+Below is a small tutorial for each of the 4 currently available analyses. I will also include a small snippet of the datasheet that is required for each analysis to make the format more clear.
 
 Navigating to the Web Application will show this webpage:
 
-<img src="Overall_web_page.png" width="75%" />
+<img src="overall_web_page.png" width="75%" />
 
 Users can then select which analysis they would like to perform!
 
@@ -73,11 +73,11 @@ All analyses will start with this step. Simply click the "Browse" button and nav
 
 **Step 2: Choose "single replicate"**
 
-<img src="blank_singlerep.png" width="75%" />
+<img src="choose_single_rep_rt.png" width="75%" />
 
 **Step 3: Enter Text Fields and Run Analysis!**
 
-<img src="single_rep_fields.png" width="75%" height="100%" />
+<img src="fields_single_rep_rt.png" width="75%" height="100%" />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. The "Housekeeping gene" field is where the user inputs the gene to be used as the housekeeping for calculations. Here I have used a generic "HKG" as an example. The "Control sample" is the name of the control in your experiment. In this case, my control was called "NT" in the sameplesheet, so I will enter that here as well. *Do not* place punctuation around the names, simply enter them as text as shown.
 
@@ -119,13 +119,13 @@ Samplesheet snippet:
 
 **Step 2: Choose "biological replicates"**
 
-<img src="bio_reps_blank.png" width="75%" />
+<img src="choose_biorep_rt.png" width="75%" />
 
 The number of replicates defaults to 3, but this can be changed to match whatever the user has for their data.
 
 **Step 3: Enter Text Fields and Run Analysis!**
 
-<img src="bioreps_filled_fields.png" width="80%" height="100%" />
+<img src="fields_biorep_rt.png" width="80%" height="100%" />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. The "Housekeeping gene" field is where the user inputs the gene to be used as the housekeeping for calculations. As before, I have used a generic "HKG" as an example. Case and Control are where you enter the information for the two groups of your samples ("Case" being the test/experimental condition, "Control" being the control condition). Looking at the samplesheet snippet, my two groups are "KD" and "LUC" (a luciferase control), respectively. If needed, change the number of replicates to match the number of biological replicates you have - I happen to have 3. The last field is where you enter the genes for which statistical tests need to be computed - this is a two-sample T.test using the `t.test` function in R. The genes *must* be entered as shown - i.e. text separated by a comma then a space. Gene names are whatever was entered for the "Detector" field in the samplesheet.
 
@@ -169,16 +169,56 @@ Samplesheet snippet:
 
 **Step 2: Choose "housekeeping gene stability"**
 
-<img src="hkg_blank.png" width="75%" />
+<img src="choose_hkg.png" width="75%" />
 
 **Step 3: Enter Text Field and Run Analysis!**
 
-<img src="hkg_filled_fields.png" width="75%" />
+<img src="fields_hkg.png" width="75%" />
 
 Here, the user enters the requested information, then clicks the "Run Analysis!" button. Enter the genes that are meant to be compared for stability. As in the biological replicates, the genes *must* be entered as text separated by a comma and space.
 
 **Step 4: Download data.**
 
 Upon completion of analysis, a download button will appear. Click this button to download a .zip file of results called "outputs.zip." For housekeeping gene stability, the contents will be a .txt file containing genes ranked from "most stable" (lowest score) to "least stable" (highest score).
+
+<img src="download_button.png" width="15%" />
+
+#### Chip qPCR
+
+This example will be for data with biological replicates using the percent input method. The process for single replicate is very similar, the exception being the "Regions for significance calculations" field should just be left blank. Similarly, fold enrichment calculations can be done by selecting "Fold Enrichment" from the "Method" dropdown menu and leaving the "Input percent" field blank.
+
+Samplesheet snippet:
+
+    #>    Well Plate    Sample   Detector       Cq
+    #> 1    A1     1 SampleA_1   input_E1 27.17850
+    #> 2    A2     1 SampleA_1   input_E1 26.85066
+    #> 3    A3     1 SampleA_1   input_E1 27.07536
+    #> 4    A4     1 SampleA_1   input_E2 27.01876
+    #> 5    A5     1 SampleA_1   input_E2 27.24639
+    #> 6    A6     1 SampleA_1   input_E2 27.21342
+    #> 49   E1     1 SampleA_1 H3K9me3_E1 26.57405
+    #> 50   E2     1 SampleA_1 H3K9me3_E1 26.78483
+    #> 51   E3     1 SampleA_1 H3K9me3_E1 26.46408
+    #> 52   E4     1 SampleA_1 H3K9me3_E2 26.40301
+    #> 53   E5     1 SampleA_1 H3K9me3_E2 26.52099
+    #> 54   E6     1 SampleA_1 H3K9me3_E2 26.24743
+
+**Step 1: Upload the file!**
+
+<img src="file_upload_image.png" width="80%" />
+
+**Step 2: Choose "housekeeping gene stability"**
+
+<img src="choose_chip.png" width="75%" />
+
+**Step 3: Enter Text Field and Run Analysis!**
+
+<img src="fields_chip.png" width="75%" />
+
+Here, the user enters the requested information, then clicks the "Run Analysis!" button. For biological replicates, the genes *must* be entered as text separated by a comma and space (as in the example).
+
+**Step 4: Download data.**
+
+Upon completion of analysis, a download button will appear. Click this button to download a .zip file of results called "outputs.zip."
 
 <img src="download_button.png" width="15%" />
