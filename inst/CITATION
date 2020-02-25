@@ -1,0 +1,7 @@
+bibentry(bibtype = "Misc",
+         title = "WARPqpcr: Web App and R Package for qPCR",
+         journal="Zenodo",
+         doi="10.5281/zenodo.3686338",
+         author = "S. Carson Callahan",
+         year = 2020,
+         note = "Updates will be available on https://github.com/sccallahan/WARPqpcr")

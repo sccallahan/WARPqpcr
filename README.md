@@ -6,7 +6,7 @@ WARPqpcr
 <img src="man/figures/WARPqpcr.png" width="20%" />
 
 <!-- badges: start -->
-[![Build Status](https://travis-ci.org/sccallahan/WARPqpcr.svg?branch=master)](https://travis-ci.org/sccallahan/WARPqpcr) <!-- badges: end -->
+[![Build Status](https://travis-ci.org/sccallahan/WARPqpcr.svg?branch=master)](https://travis-ci.org/sccallahan/WARPqpcr) [![DOI](https://zenodo.org/badge/222321107.svg)](https://zenodo.org/badge/latestdoi/222321107) <!-- badges: end -->
 
 **W**eb **A**pp and **R** **P**ackage for qPCR (WARPqpcr) provides functionality for analyzing RT-qPCR and ChIP-qPCR data and generating plots of results.
 
