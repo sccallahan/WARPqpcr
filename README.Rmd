@@ -56,6 +56,19 @@ apt-get install  libx11-dev mesa-common-dev libglu1-mesa-dev
 
 ```
 
+## Quick navigation
+
+* [Samplesheet format description](https://github.com/sccallahan/WARPqpcr#some-notes-about-samplesheet-format-and-methods)
+* [RT-qPCR single replicate](https://github.com/sccallahan/WARPqpcr#example-for-rt-qcpr-single-replicate-data)
+* [RT-qPCR biological replicate](https://github.com/sccallahan/WARPqpcr#example-for-rt-qpcr-biological-replicate-data)
+* [Housekeeping gene stability](https://github.com/sccallahan/WARPqpcr#example-for-selecting-most-stable-housekeeping-gene)
+* [ChIP-qPCR single replicate](https://github.com/sccallahan/WARPqpcr#example-for-chip-qpcr-single-replicate-data)
+* [ChIP-qPCR biological replicate](https://github.com/sccallahan/WARPqpcr#example-for-chip-qpcr-biological-replicate-data)
+
+* [References](https://github.com/sccallahan/WARPqpcr#references)
+* [Acknowledgements](https://github.com/sccallahan/WARPqpcr#acknowledgments)
+* [Citation information](https://github.com/sccallahan/WARPqpcr#citation)
+
 ## Some notes about samplesheet format and methods
 
 #### Samplesheet format and reading in data

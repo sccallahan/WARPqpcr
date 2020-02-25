@@ -20,6 +20,25 @@ The WARPqpcr Web Application runs the same analysis as the [WARPqpcr R package](
 
 Upload completion of the analysis, a download button will appear, allowing users to download a .zip file containing all of the analysis outputs.
 
+If you like WARPqpcr, please cite it!
+
+    #> 
+    #> Callahan SC (2020). "WARPqpcr: Web App and R Package for qPCR."
+    #> doi: 10.5281/zenodo.3686338 (URL:
+    #> http://doi.org/10.5281/zenodo.3686338), Updates will be available
+    #> on https://github.com/sccallahan/WARPqpcr.
+    #> 
+    #> A BibTeX entry for LaTeX users is
+    #> 
+    #>   @Misc{,
+    #>     title = {WARPqpcr: Web App and R Package for qPCR},
+    #>     journal = {Zenodo},
+    #>     doi = {10.5281/zenodo.3686338},
+    #>     author = {S. Carson Callahan},
+    #>     year = {2020},
+    #>     note = {Updates will be available on https://github.com/sccallahan/WARPqpcr},
+    #>   }
+
 NB: Disconnection from the server after clicking "Run Analysis" is indicative of one or more fields being incorrectly completed - a typo in a condition/gene name is the most common reason.
 
 Tutorials
@@ -215,7 +234,7 @@ Samplesheet snippet:
 
 <img src="fields_chip.png" width="75%" />
 
-Here, the user enters the requested information, then clicks the "Run Analysis!" button. For biological replicates, the genes *must* be entered as text separated by a comma and space (as in the example).
+Here, the user enters the requested information, then clicks the "Run Analysis!" button. For biological replicates, the regions *must* be entered as text separated by a comma and space (as in the example).
 
 **Step 4: Download data.**
 
