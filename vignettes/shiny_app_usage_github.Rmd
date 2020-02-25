@@ -23,7 +23,6 @@ knitr::opts_chunk$set(
 suppressPackageStartupMessages(library(WARPqpcr))
 suppressPackageStartupMessages(library(png))
 suppressPackageStartupMessages(library(jpeg))
-suppressPackageStartupMessages(library(here))
 ```
 
 ## About the Application
